@@ -1,39 +1,22 @@
-print("Exercício: Proposições Simples")
-P = "Está Chovendo"
-Q = "Está Quente"
-R = "Eu vou sair de casa"
+from nltk.chat.util import Chat, reflections
 
-print(P)
-print(Q)
-print(R)
+pares = [
+    ["oi|olá|e aí", ["Olá!", "Oi, tudo bem?", "E aí!"]],
+    ["qual é o seu nome?", ["Sou um chatbot!", "Me chamo Chatbot."]],
+    ["como você está?", ["Estou bem, e você?", "Estou funcionando perfeitamente!"]],
+    ["estou bem,como voce esta?|estou bem como voce esta?|estou bem e como voce esta?|estou bem, como voce esta?",["Que bom, eu estou bem!"]],
+    ["voce foi feito em qual linguagem de programação?",["eu fui feito utilizando python"]],
+    ["o que voce pode fazer?",["eu sou apenas um prototipo de uma atividadde que pode responder perguntas como:\nqual é o seu nome? \ncomo você está?\nvoce foi feito em qual linguagem de programação?"]],
+    ["tchau|sair|adeus", ["Até mais!", "Tchau, volte sempre!"]],
+]
 
-
-print("\nExercício: Negação de Proposições")
-
-P = "O carro está estacionado"
-negacaodeP = "O carro não está estacionado"  if P else not  "O carro está estacionado"
-
-print("Proposição P:", P)
-print("Negação de P:", negacaodeP)
-
-print("\nExercício: Conjunção (AND)")
-
-P = "Hoje é segunda-feira."
-Q = "Eu tenho aula."
-
-conjuncao = P and Q
-negacao_conjuncao = not P and not Q
-
-print("P ∧ Q:", conjuncao)
-print("-P ∧ -Q:", negacao_conjuncao)
-
-print("\nExercício: Disjunção (OR)")
-
-P = "Eu tenho dinheiro."
-Q = "Eu tenho cartão de crédito."
-
-disjuncao = P or Q
-negacao_disjuncao = not P or not Q
-
-print("P ∨ Q:", disjuncao)
-print("-P ∨ -Q:", negacao_disjuncao)
+chatbot = Chat(pares, reflections)
+print("ola sobre o que deseja conversar")
+print("caso deseje sair digite: sair")
+while True:
+    entrada = input("Voce: ").lower()
+    if entrada.lower() == "sair" or "tchau":
+        print("chatbot: Ate mais ")
+        break
+    resposta = chatbot.respond(entrada)
+    print ("Chatbot:", resposta)
