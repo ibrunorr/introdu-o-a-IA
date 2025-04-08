@@ -1,0 +1,39 @@
+print("Exercício: Proposições Simples")
+P = "Está Chovendo"
+Q = "Está Quente"
+R = "Eu vou sair de casa"
+
+print(P)
+print(Q)
+print(R)
+
+
+print("\nExercício: Negação de Proposições")
+
+P = "O carro está estacionado"
+negacaodeP = "O carro não está estacionado"  if P else not  "O carro está estacionado"
+
+print("Proposição P:", P)
+print("Negação de P:", negacaodeP)
+
+print("\nExercício: Conjunção (AND)")
+
+P = "Hoje é segunda-feira."
+Q = "Eu tenho aula."
+
+conjuncao = P and Q
+negacao_conjuncao = not P and not Q
+
+print("P ∧ Q:", conjuncao)
+print("-P ∧ -Q:", negacao_conjuncao)
+
+print("\nExercício: Disjunção (OR)")
+
+P = "Eu tenho dinheiro."
+Q = "Eu tenho cartão de crédito."
+
+disjuncao = P or Q
+negacao_disjuncao = not P or not Q
+
+print("P ∨ Q:", disjuncao)
+print("-P ∨ -Q:", negacao_disjuncao)
