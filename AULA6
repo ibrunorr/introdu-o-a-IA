@@ -1,0 +1,16 @@
+regras_dieta = {
+    "fome constante e cansaço excessivo": "Dieta rica em proteínas e carboidratos para dar mais energia",
+    "digestão lenta e inchaço abdominal": "Dieta leve e rica em fibras para ajudar na digestão",
+    "dificuldade para perder peso e desejo de comer doces": "Dieta com baixo carboidrato e controle de açúcar",
+    "falta de apetite e perda de peso": "Recomenda-se uma dieta calórica, rica em gorduras boas e proteínas",
+    "desejo por alimentos salgados e retenção de líquidos": "Dieta com redução de sódio e aumento da ingestão de água"
+}
+
+def recomendar_alimentos(sintomas):
+    sintomas_str = " e ".join(sintomas) 
+    return regras_dieta.get(sintomas_str, "Sintomas não encontrados. Consulte um nutricionista.")
+
+
+sintomas_usuario_1 = ["fome constante", "cansaço excessivo"]
+recomendacao_1 = recomendar_alimentos(sintomas_usuario_1)
+print(f"Recomendação : {recomendacao_1}")
